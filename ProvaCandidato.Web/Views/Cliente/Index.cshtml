@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ProvaCandidato.Data.Entidade.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="input-group">
+                @using (Html.BeginForm("Index", "Cliente", FormMethod.Get))
+                {
+                    @Html.TextBox("name");
+                    <button type="submit">Pesquisar</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Criar", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Codigo }) |
+                @Html.ActionLink("Visualizar", "Details", new { id = item.Codigo }) |
+                @Html.ActionLink("Excluir", "Delete", new { id = item.Codigo })
+            </td>
+        </tr>
+    }
+
+</table>

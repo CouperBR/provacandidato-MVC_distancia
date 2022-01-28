@@ -1,0 +1,14 @@
+1 - Funcionamento dos blocos try, batch e finally
+
+O bloco try define o que deve ser executado(ou pelo menos tentar);
+O bloco ctach define o que deve ser executado caso algo dentro do try dê erro;
+O bloco finally define o que será executado após try e/ou catch. Após o final completo dos blocos.
+
+2 - Função das migrations:
+ as migrações são uma forma de definir o esquema do banco de dados, gerenciando estrutura e etc.
+ Elas tem como intenção espelhar código e banco de dados, facilitando e acelerando o desenvolvimento de código e modelagem de dados.
+ 
+ 
+3 - Beneficio da ViewBag sendo dynamic:
+Por ser dinamico ela resolve problemas de dados diferentes que devem ser mostrados em todas as paginas, ou em algumas.
+Por algumas vezes não desejamos modificar cada Model das views para manter uma mensagem ou dados.
